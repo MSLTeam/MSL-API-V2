@@ -1,0 +1,18 @@
+{
+    "免费": {
+        "香港": {
+            "server_addr": "0.0.0.0",
+            "server_port": 0,
+            "min_open_port": 0,
+            "max_open_port": 0
+        }
+    },
+    "付费": {
+        "北京": {
+            "server_addr": "0.0.0.0",
+            "server_port": 0,
+            "min_open_port": 0,
+            "max_open_port": 0
+        }
+    }
+}

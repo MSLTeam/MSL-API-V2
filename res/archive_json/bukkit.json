@@ -1,0 +1,228 @@
+{
+    "bukkit": {
+        "1.16.4": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.16.4.jar",
+            "mode": "full"
+        },
+        "1.16.3": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.16.3.jar",
+            "mode": "full"
+        },
+        "1.16.2": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.16.2.jar",
+            "mode": "full"
+        },
+        "1.16.1": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.16.1.jar",
+            "mode": "full"
+        },
+        "1.15.2": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.15.2.jar",
+            "mode": "full"
+        },
+        "1.15.1": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.15.1-R0.1-SNAPSHOT.jar",
+            "mode": "full"
+        },
+        "1.15": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.15-R0.1-SNAPSHOT.jar",
+            "mode": "full"
+        },
+        "1.14.4": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.14.4-R0.1-SNAPSHOT.jar",
+            "mode": "full"
+        },
+        "1.14.3": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.14.3-R0.1-SNAPSHOT.jar",
+            "mode": "full"
+        },
+        "1.14.2": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.14.2-R0.1-SNAPSHOT.jar",
+            "mode": "full"
+        },
+        "1.14.1": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.14.1-R0.1-SNAPSHOT.jar",
+            "mode": "full"
+        },
+        "1.14": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.14-R0.1-SNAPSHOT.jar",
+            "mode": "full"
+        },
+        "1.13.2": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.13.2.jar",
+            "mode": "full"
+        },
+        "1.13.1": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.13.1.jar",
+            "mode": "full"
+        },
+        "1.13": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.13.jar",
+            "mode": "full"
+        },
+        "1.12.2": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.12.2.jar",
+            "mode": "full"
+        },
+        "1.12.1": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.12.1.jar",
+            "mode": "full"
+        },
+        "1.12": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.12.jar",
+            "mode": "full"
+        },
+        "1.11.2": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.11.2.jar",
+            "mode": "full"
+        },
+        "1.11.1": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.11.1.jar",
+            "mode": "full"
+        },
+        "1.11": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.11.jar",
+            "mode": "full"
+        },
+        "1.10.2": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.10.2-R0.1-SNAPSHOT-latest.jar",
+            "mode": "full"
+        },
+        "1.10": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.10-R0.1-SNAPSHOT-latest.jar",
+            "mode": "full"
+        },
+        "1.9.4": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.9.4-R0.1-SNAPSHOT-latest.jar",
+            "mode": "full"
+        },
+        "1.9.2": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.9.2-R0.1-SNAPSHOT-latest.jar",
+            "mode": "full"
+        },
+        "1.9": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.9-R0.1-SNAPSHOT-latest.jar",
+            "mode": "full"
+        },
+        "1.8.8": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.8.8-R0.1-SNAPSHOT-latest.jar",
+            "mode": "full"
+        },
+        "1.8.7": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.8.7-R0.1-SNAPSHOT-latest.jar",
+            "mode": "full"
+        },
+        "1.8.6": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.8.6-R0.1-SNAPSHOT-latest.jar",
+            "mode": "full"
+        },
+        "1.8.5": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.8.5-R0.1-SNAPSHOT-latest.jar",
+            "mode": "full"
+        },
+        "1.8.4": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.8.4-R0.1-SNAPSHOT-latest.jar",
+            "mode": "full"
+        },
+        "1.8.3": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.8.3-R0.1-SNAPSHOT-latest.jar",
+            "mode": "full"
+        },
+        "1.8": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.8-R0.1-SNAPSHOT-latest.jar",
+            "mode": "full"
+        },
+        "1.7.10": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.7.10-R0.1-20140808.005431-8.jar",
+            "mode": "full"
+        },
+        "1.7.9": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.7.9-R0.2-SNAPSHOT.jar",
+            "mode": "full"
+        },
+        "1.7.8": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.7.8-R0.1-SNAPSHOT.jar",
+            "mode": "full"
+        },
+        "1.7.5": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.7.5-R0.1-20140402.020013-12.jar",
+            "mode": "full"
+        },
+        "1.7.2": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.7.2-R0.4-20140216.012104-3.jar",
+            "mode": "full"
+        },
+        "1.6.4": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.6.4-R2.0.jar",
+            "mode": "full"
+        },
+        "1.6.2": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.6.2-R0.1-SNAPSHOT.jar",
+            "mode": "full"
+        },
+        "1.6.1": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.6.1-R0.1-SNAPSHOT.jar",
+            "mode": "full"
+        },
+        "1.5.2": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.5.2-R1.0.jar",
+            "mode": "full"
+        },
+        "1.5.1": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.5.1-R0.2-SNAPSHOT.jar",
+            "mode": "full"
+        },
+        "1.5": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.5-R0.1-20130317.180842-21.jar",
+            "mode": "full"
+        },
+        "1.4.7": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.4.7-R1.1-SNAPSHOT.jar",
+            "mode": "full"
+        },
+        "1.4.6": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.4.6-R0.4-SNAPSHOT.jar",
+            "mode": "full"
+        },
+        "1.4.5": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.4.5-R1.1-SNAPSHOT.jar",
+            "mode": "full"
+        },
+        "1.4.2": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.4.2-R0.3-SNAPSHOT.jar",
+            "mode": "full"
+        },
+        "1.3.2": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.3.2-R2.1-SNAPSHOT.jar",
+            "mode": "full"
+        },
+        "1.3.1": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.3.1-R2.1-SNAPSHOT.jar",
+            "mode": "full"
+        },
+        "1.2.5": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.2.5-R5.1-SNAPSHOT.jar",
+            "mode": "full"
+        },
+        "1.2.4": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.2.4-R1.1-SNAPSHOT.jar",
+            "mode": "full"
+        },
+        "1.2.3": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.2.3-R0.3-SNAPSHOT.jar",
+            "mode": "full"
+        },
+        "1.2.2": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.2.2-R0.1-SNAPSHOT.jar",
+            "mode": "full"
+        },
+        "1.1": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.1-R5-SNAPSHOT.jar",
+            "mode": "full"
+        },
+        "1.0.0": {
+            "file": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.0.0-SNAPSHOT.jar",
+            "mode": "full"
+        }
+    }
+}

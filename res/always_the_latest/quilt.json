@@ -1,0 +1,8 @@
+{
+    "quilt":{
+        "latest":{
+            "file":"https://quiltmc.org/api/v1/download-latest-installer/java-universal",
+            "mode":"full"
+        }
+    }
+}
