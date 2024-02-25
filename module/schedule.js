@@ -30,7 +30,7 @@ const syncPufferfish = require("./sync/pufferfish");
 const syncSpongeForge = require("./sync/spongeforge");
 const syncSpongeVanilla = require("./sync/spongevanilla");
 const syncTravertine = require("./sync/travertine");
-const syncBanner = require("./sync/mohist");
+const syncBanner = require("./sync/banner");
 
 const syncInfo = {
     lastTime: "",
