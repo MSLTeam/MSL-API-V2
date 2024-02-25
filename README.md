@@ -20,6 +20,7 @@
 - spigot
 - spongevanilla/forge
 - velocity
+- Travertine
 
 ### 暂时只拉取url
 
