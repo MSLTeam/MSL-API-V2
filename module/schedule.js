@@ -30,6 +30,7 @@ const syncPufferfish = require("./sync/pufferfish");
 const syncSpongeForge = require("./sync/spongeforge");
 const syncSpongeVanilla = require("./sync/spongevanilla");
 const syncTravertine = require("./sync/travertine");
+const syncBanner = require("./sync/mohist");
 
 const syncInfo = {
     lastTime: "",
@@ -63,6 +64,8 @@ async function syncTask(taskCron, path) {
         //开始同步
         //await jsonBDS(path);
         cleanLogs()
+        await syncBanner(path);
+        await outputJsonOfMirror('banner', path)
         await syncTravertine(path);
         await outputJsonOfMirror('travertine', path)
         await syncSpongeVanilla(path);
@@ -73,6 +76,7 @@ async function syncTask(taskCron, path) {
         await jsonSpigot(path, config.banSpigot);
         await syncLocalJson(path, "spigot")
         await syncMohist(path);
+        await outputJsonOfMirror('mohist', path)
         await syncCatserver(path); //其实只同步url
         await syncLocalJson(path, "catserver")
         await syncArclight(path); //其实只同步url
@@ -91,7 +95,7 @@ async function syncTask(taskCron, path) {
         await syncVelocity(path);
         await outputJsonOfMirror('velocity', path)
         await jsonFabric(path);
-        await outputJsonOfMirror('mohist', path)
+
         await syncPaper(path);
         await outputJsonOfMirror('paper', path);
         deleteFilesNow();//删除文件

@@ -9,6 +9,7 @@
 
 - arclight
 - bukkit
+- banner
 - catserver
 - folia
 - leaves
@@ -20,7 +21,7 @@
 - spigot
 - spongevanilla/forge
 - velocity
-- Travertine
+- travertine
 
 ### 暂时只拉取url
 
