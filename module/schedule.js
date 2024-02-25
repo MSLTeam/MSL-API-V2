@@ -29,6 +29,7 @@ const {cleanLogs} = require("./accessLog");
 const syncPufferfish = require("./sync/pufferfish");
 const syncSpongeForge = require("./sync/spongeforge");
 const syncSpongeVanilla = require("./sync/spongevanilla");
+const syncTravertine = require("./sync/travertine");
 
 const syncInfo = {
     lastTime: "",
@@ -62,6 +63,8 @@ async function syncTask(taskCron, path) {
         //开始同步
         //await jsonBDS(path);
         cleanLogs()
+        await syncTravertine(path);
+        await outputJsonOfMirror('travertine', path)
         await syncSpongeVanilla(path);
         await outputJsonOfMirror('spongevanilla', path);
         await syncSpongeForge(path);
