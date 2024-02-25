@@ -9,7 +9,7 @@ const config = require("../config");
 async function combineJson(rootPath) {
     let jsonData = {
         "resourceRoot": "servers/",
-        "enabledServerMirrorTypes": ["arclight", "paper", "mohist", "purpur", "fabric", "neoforge", "forge", "leaves", "vanilla", "lightfall", "bungeecord", "catserver", "nukkitx", "velocity", "folia", "quilt", "pufferfish", "pufferfish_purpur", "pufferfishplus", "pufferfishplus_purpur", "spigot", "bukkit", "spongevanilla", "spongeforge"],
+        "enabledServerMirrorTypes": ["arclight", "paper", "mohist", "purpur", "fabric", "neoforge", "forge", "leaves", "vanilla", "lightfall", "bungeecord", "catserver", "banner", "nukkitx", "velocity", "folia", "quilt", "pufferfish", "pufferfish_purpur", "pufferfishplus", "pufferfishplus_purpur", "spigot", "bukkit", "spongevanilla", "spongeforge", "travertine"],
         "serverDescription": {
             "arclight": "[模组端推荐]Forge+Spigot API的服务端,同时支持插件和模组,可能会导致部分模组无法使用,请自行排查!",
             "paper": "[原版端推荐]Paper是基于Spigot的高性能Fork,仅支持插件",
@@ -34,16 +34,18 @@ async function combineJson(rootPath) {
             "pufferfish_purpur": "海豚端，优化版的purpur。",
             "pufferfish": "海豚端，优化版的paper。",
             "spongevanilla": "海绵端，只支持海绵端插件！！！",
-            "spongeforge": "海绵forge混合端，只支持海绵端插件！"
+            "spongeforge": "海绵forge混合端，只支持海绵端插件！",
+            "banner": "Fabric+插件混合端，由mohistmc开发！",
+            "travertine": "支持1.7版本的代理端，已经停更！"
         },
         "serverClassify": {
             "pluginsCore": ["paper", "purpur", "spigot", "bukkit", "folia", "leaves", "pufferfish", "pufferfish_purpur", "pufferfishplus", "pufferfishplus_purpur", "spongevanilla"],
-            "pluginsAndModsCore": ["arclight", "mohist", "catserver", "spongeforge"],
+            "pluginsAndModsCore": ["arclight", "mohist", "catserver", "banner", "spongeforge"],
             "modsCore_Forge": ["forge", "neoforge"],
             "modsCore_Fabric": ["fabric", "quilt"],
             "vanillaCore": ["vanilla"],
             "bedrockCore": ["nukkitx"],
-            "proxyCore": ["velocity", "bungeecord", "lightfall"]
+            "proxyCore": ["velocity", "bungeecord", "lightfall", "travertine"]
         },
         "versions": {}
     };
