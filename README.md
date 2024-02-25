@@ -1,7 +1,33 @@
 # MC-ServerMirror-AutoSync
-用于MSLAPI的同步服务端
+用于MSLAPI的同步服务端以及API二和1
 
 暂时不支持直接同步的服务端json文件存储在json文件夹
+
+## 支持同步的服务端
+
+### 拉取镜像
+
+- arclight
+- bukkit
+- catserver
+- folia
+- leaves
+- lightfall
+- mohist
+- paper
+- pufferfish（+）
+- purpur
+- spigot
+- spongevanilla/forge
+- velocity
+
+### 暂时只拉取url
+
+- fabric
+- forge
+- neoforge
+- vanilla
+- quilt
 
 ## 运行方法：（Node版本>18）
 
