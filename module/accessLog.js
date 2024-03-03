@@ -47,13 +47,15 @@ function closeDb() {
 
 function cleanLogs() {
     logger.info('开始清理日志！');
-    const today = new Date().toISOString().slice(0, 10);
-    db.get(`SELECT COUNT(*) as count FROM log`, [], (err, row) => {
+    const date = new Date();
+    date.setDate(date.getDate() - 14);
+    const fourteenDaysAgo = date.toISOString().slice(0, 10);
+    db.get(`SELECT COUNT(*) as count FROM log WHERE date(response_time) < ?`, [fourteenDaysAgo], (err, row) => {
         if (err) {
             logger.error(err.message);
         } else {
-            if (row.count > 100000) {
-                db.run(`DELETE FROM log WHERE date(response_time) != ?`, [today], (err) => {
+            if (row.count > 0) {
+                db.run(`DELETE FROM log WHERE date(response_time) < ?`, [fourteenDaysAgo], (err) => {
                     if (err) {
                         logger.error(err.message);
                     } else {
@@ -61,7 +63,7 @@ function cleanLogs() {
                     }
                 });
             } else {
-                logger.info('日志未超出10w，不清理！');
+                logger.info('14天之前的日志不存在，不清理！');
             }
         }
     });

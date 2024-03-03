@@ -16,10 +16,15 @@ function openDb() {
 }
 
 function getStatCount(req, res) {
-    const today = new Date().toISOString().slice(0, 10);
-    db.all(`SELECT url, COUNT(*) as count FROM log WHERE date(response_time) = ? AND status != 404 GROUP BY url`, [today], (err, rows) => {
+    const type = req.query.type;
+    let date = new Date();
+    if (type === 'all') {
+        date.setDate(date.getDate() - 14);
+    }
+    const targetDate = date.toISOString().slice(0, 10);
+    db.all(`SELECT url, COUNT(*) as count FROM log WHERE date(response_time) >= ? AND status != 404 GROUP BY url`, [targetDate], (err, rows) => {
         if (err) {
-            console.error(err.message);
+            logger.error(err.message);
             res.status(500).send(err.message);
         } else {
             //处理URL格式
@@ -34,10 +39,10 @@ function getStatCount(req, res) {
             });
             const routeRows = Object.keys(routeCounts).map(route => ({route, count: routeCounts[route]}));
 
-            // 获取今天有多少不同的 IP
-            db.all(`SELECT COUNT(DISTINCT ip) as ipCount FROM log WHERE date(response_time) = ?`, [today], (err, ipRows) => {
+            //获取指定日期范围内有多少不同的 IP
+            db.all(`SELECT COUNT(DISTINCT ip) as ipCount FROM log WHERE date(response_time) >= ?`, [targetDate], (err, ipRows) => {
                 if (err) {
-                    console.error(err.message);
+                    logger.error(err.message);
                     res.status(500).send(err.message);
                 } else {
                     const ipCount = ipRows[0].ipCount;
