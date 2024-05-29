@@ -1,18 +1,22 @@
 const express = require('express');
 const app = express(); //创建express app
 const pathModule = require('path');
-const logger = require('./module/logger.js'); //日志工具
+const logger = require('./utils/logger.js'); //日志工具
 const cron = require('node-cron');
-const {syncTask, syncInfo} = require('./module/schedule');
+const {syncTask, syncInfo} = require('./components/schedule');
 const packageDetails = require('./package.json');
 const moment = require("moment/moment");
 const parser = require("cron-parser");
-const api = require('./module/api');//api路由引用
+const api = require('./routes/infoGet');//api路由引用
+const apiStat = require('./routes/stat');
+const apiSc = require('./routes/mcServerCores');
+const apiDownload = require('./routes/download');
+const apiChild = require('./routes/childGetApi');
 const crypto = require('crypto');
 const config = require("./config");
 const fs = require("fs");
 const rateLimit = require('express-rate-limit');
-const accessLog = require('./module/accessLog');
+const accessLog = require('./components/accessLog');
 
 let path = ''
 if (config.NODE_TLS_REJECT_UNAUTHORIZED === true) {
@@ -22,7 +26,7 @@ if (config.NODE_TLS_REJECT_UNAUTHORIZED === true) {
 //记录访问日志
 accessLog.openDb();
 accessLog.createTable();
-api.openDb();
+apiStat.openDb();
 
 //速率限制器
 const limiter = rateLimit({
@@ -49,9 +53,7 @@ app.use((req, res, next) => {
         const message = `${ip} - - [${date}] "${method} ${url} HTTP/1.1" ${status} - "-" "${userAgent}"`;
 
         // 插入日志到数据库
-        accessLog.insertLog(ip, method, url, status, date, userAgent);
-        // 在控制台输出日志信息
-        logger.info('访问日志：' + message);
+        accessLog.insertLog(ip, method, url, status, date, userAgent, message);
     });
 
     next();
@@ -64,6 +66,7 @@ if (config.path === '') {
 } else {
     path = config.path;
 }
+
 
 //根路由，访问返回运行状态
 app.get('/', (req, res) => {
@@ -137,24 +140,26 @@ if (!fs.existsSync(path + '/public')) {
 
 
 //api路由
-app.get('/stat/count', api.getStatCount);
-app.get('/query/available_server_types', api.availableServerTypes(path + '/resources/servers_index.json')); //获取可用的服务器类型
-app.get('/query/servers_description/:server', api.getServerDescription(path + '/resources/servers_index.json'));
-app.get('/query/server_classify', api.serverClassify(path + '/resources/servers_index.json'));
-app.get('/query/available_versions/:server', api.getAvailableVersions(path + '/resources/servers_index.json'));
-app.get('/download/server/:server/:version', api.downloadServer(path + '/resources/servers_index.json'));
-app.get('/query/MSLFrps', api.getFrp(path + '/resources/frps.json'));
+app.get('/stat/count', apiStat.getStatCount);
+app.get('/query/available_server_types', apiSc.availableServerTypes(path + '/resources/servers_index.json')); //获取可用的服务器类型
+app.get('/query/servers_description/:server', apiSc.getServerDescription(path + '/resources/servers_index.json'));
+app.get('/query/server_classify', apiSc.serverClassify(path + '/resources/servers_index.json'));
+app.get('/query/available_versions/:server', apiSc.getAvailableVersions(path + '/resources/servers_index.json'));
+app.get('/download/server/:server/:version', apiDownload.downloadServer(path + '/resources/servers_index.json'));
+app.get('/query/MSLFrps', api.getFrp(path + '/resources/msl_frps.json'));
 app.get('/query/MSLFrps/notice', api.getNoticeMSLFrp(path + '/resources/frpc.json'));
+app.get('/query/MSLFrps/orderapi', api.getOrderAddrMSLFrp(path + '/resources/frpc.json'));
 app.get('/query/update', api.getLatestVersion(path + '/resources/msl.json'));
 app.get('/query/update/log', api.getUpdateLog(path + '/resources/msl.json'));
-app.get('/download/update', api.downloadLatestVersion(path + '/resources/msl.json'));
+app.get('/download/update', apiDownload.downloadLatestVersion(path + '/resources/msl.json'));
 app.get('/query/notice/main', api.getNoticeMain(path + '/resources/msl.json'));
 app.get('/query/notice/id', api.getNoticeID(path + '/resources/msl.json'));
 app.get('/query/notice/tips', api.getNoticeTIPS(path + '/resources/msl.json'));
 app.get('/query/cf_token', api.getCFToken(path + '/resources/cruseforgetoken.json'));
 app.get('/query/java', api.getZuluVersions(path + '/res/java.json'));
-app.get('/download/java/:ver', api.downloadJava(path + '/res/java.json'));
-app.get('/download/frpc/:source/:platform', api.downloadFrp(path + '/resources/frpc.json'));
+app.get('/query/childGetRes', apiChild.childGetResources(path + '/resources/', path + '/public/'));
+app.get('/download/java/:ver', apiDownload.downloadJava(path + '/res/java.json'));
+app.get('/download/frpc/:source/:platform', apiDownload.downloadFrp(path + '/resources/frpc.json'));
 app.use('/files', express.static(path + '/servers'));
 app.use('/public', express.static(path + '/public'));
 
@@ -180,7 +185,8 @@ app.use(function (req, res, next) {
 <head><title>404 Not Found</title></head>
 <body>
 <center><h1>404 Not Found</h1></center>
-<hr><center>MSL-API</center>
+<center><img src="https://http.cat/404" alt="404捏喵~"/></center>
+<hr><center>MSL-API-V2</center>
 </body>
 </html>
   `);
